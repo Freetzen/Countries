@@ -1,34 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes, useLocation } from "react-router-dom"
+import LandingPage from "./components/LandingPage/LandingPage"
+import {useState } from "react"
+import Home from "./components/Home/Home"
+import Detail from "./components/Detail/Detail"
+import NavBar from "./components/NavBar/NavBar"
+import Form from "./components/Form/Form"
+import { searchCountry } from "./redux/actions"
+import { useDispatch } from "react-redux"
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const location = useLocation()
+  const dispatch = useDispatch()
+
+  const [page, setPage] = useState(1)
+
+  const onSearch = (newname) => {
+    try{
+      dispatch(searchCountry(newname))
+      setPage(1)
+    } catch{
+      throw Error(error.message);
+    }
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='App'>
+
+      {
+        location.pathname !== '/' &&  <NavBar/> //Si se cumple los primero, muestra el componente
+      }
+
+      <Routes>
+        <Route  path='/' element={<LandingPage />} />
+        <Route  path='/home' element={<Home page={page} setPage={setPage} onSearch={onSearch}/>} />
+        <Route  path="/detail/:id" element={<Detail />} />
+        <Route  path="/create-activity" element={<Form />} />
+        <Route />
+      </Routes>
+    </div>
   )
 }
 

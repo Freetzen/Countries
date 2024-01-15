@@ -1,0 +1,22 @@
+.cardActivity{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    color: white;
+    background-color: #1d1d1d96;
+    padding: 20px;
+    margin: 40px;
+    justify-content: center;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid white;
+}
+
+.cardActivity h3{
+    margin-top: 20px;
+}
+
+.cardActivity span{
+    color: rgb(248, 216, 158);
+    font-family: 'Courier New', Courier, monospace;
+}

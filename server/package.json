@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "Server Proyecto Individual",
+  "description": "PI Countries - Federico Ruiz Gei",
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js",

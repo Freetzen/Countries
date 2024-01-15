@@ -1,0 +1,44 @@
+.detailCards{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.detailDiv{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    color: white;
+    background-color: #1d1d1d96;
+    padding: 20px;
+    margin: 40px;
+    justify-content: center;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid white;
+}
+
+.detailDiv h3{
+    margin-top: 20px;
+}
+
+.detailDiv h1{
+    margin-top: 30px;
+}
+
+.detailDiv img{
+    border-radius: 7px;
+    margin-bottom: 20px;
+}
+
+.detailDiv span{
+    color: rgb(248, 216, 158);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.divNoActivity{
+    background-color: #1d1d1d96;
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+}
