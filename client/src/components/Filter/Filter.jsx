@@ -61,7 +61,7 @@ const Filter = ({setPage}) => {
             </select>
             
             <select onChange={handleActivities} name="selectedActivity" className='selectFilter'>
-          <option value="activities">Clean Activities</option>
+          <option value="actividad">Clean Activities</option>
           {activities.map((activity) => (
           
             <option value={activity.name} key={activity.id}>

@@ -18,14 +18,14 @@ const Detail = () => {
         dispatch(countriesById(id));
         dispatch(getActivity())
         return () => {
-            dispatch(cleanDetail())
+          dispatch(cleanDetail())
         }
     }, []);
+    
+
     const actividad = activities.filter((activity) => {
         return activity.Countries.some(country => country.id === id);
     })
-
-    console.log(actividad)
 
   return (
     <div className="detailCards">

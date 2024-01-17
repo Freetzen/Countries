@@ -21,9 +21,7 @@ const Form = () => {
     season: '',
     countries: []
   })
-
-  console.log(inputData)
-  
+ 
 
   const handleChange = (e) => {
     setInputData({

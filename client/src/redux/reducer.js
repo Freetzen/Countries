@@ -105,7 +105,7 @@ const reducer = (state = initialState, action) => {
                     ...state,
                     allCountries: filterActivity.length ? newCopyCountries.filter(country => {
                         return country.Activities?.some(activity => activity.name === filterActivity)
-                    }) : newCopyCountries
+                    }) : newCopyCountries //Si hay una act, se filtran los países que tienen al menos una actividad con ese nombre
                 }
             }
             filterContinents = action.payload
